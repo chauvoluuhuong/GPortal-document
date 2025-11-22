@@ -135,7 +135,13 @@ Tương tự như lập trình, chúng tôi hỗ trợ các kiểu dữ liệu s
 Enum gồm: key – name – color.
 Giả sử ta muốn tạo thêm một thuộc tính tên role (vai trò) để quản lý thành viên trong team, mỗi thành viên có thể có một trong ba vai trò là junior, senior, leader
 
-📹 Tạo - nhập liệu, tìm kiếm với kiểu enum:
+Để thiết lập kiểu enum ta làm như sau:
+
+1. Field type: chọn enum
+2. nhập liệu key cho enum
+3. nhập liệu name và color (màu) sẽ được với field enum.
+
+📹 Demo:
 
 ![Demo enum field](assets/demoEnumField.gif)
 
@@ -145,6 +151,10 @@ Giả sử ta muốn tạo thêm một thuộc tính tên role (vai trò) để 
 
 Dùng để chứa key, trỏ đến đối tượng (entity) khác.
 Giả sử chúng ta cần thêm một thuộc tính nữa là team, thuộc tính này sẽ cho chúng ta biết team member sẽ thuộc team nào
+Để thiết lập Reference ta làm như sau:
+
+1. Field type: chọn Reference
+2. Entity referenced: Chọn đối tượng quản lý được tham chiếu, ở đây tôi chọn team
 
 📹 Demo
 
@@ -157,31 +167,47 @@ Giả sử chúng ta cần thêm một thuộc tính nữa là team, thuộc tí
 Dùng để chưa một tập các key, dùng để trỏ đến nhiều đối tượng (entity khác nhau).
 Giả sử chúng ta tạo thêm một thuộc tính tên projects (dự án), thuộc tính này sẽ quyết định team sẽ thuộc về các dự án nào.
 
-📹 Ví dụ đề xuất:
+Để thiết lập Array reference ta làm như sau:
+
+1. Field type: chọn Array Reference
+2. Entity referenced: Chọn đối tượng quản lý được tham chiếu, ở đây tôi chọn đối tượng là team
+
+📹 Demo:
 
 ![Demo array reference](assets/demoArrayReference.gif)
 
 ---
 
-## **7.4 Embedded Document**
+## **Embedded Document**
 
-Dùng để lưu kiểu dữ liệu object, giả sử chúng ta muốn tạo thêm một thuộc tính tên address để lưu địa chỉ của thành viên. Địa chỉ của thành viên gồm 2 thuộc tính con là street (đường), thành phố (city), chúng ta làm như sau
+Dùng để lưu kiểu dữ liệu object, giả sử chúng ta muốn tạo thêm một thuộc tính tên address để lưu địa chỉ của thành viên. Địa chỉ của thành viên gồm 2 thuộc tính con là street (đường), thành phố (city).
 
-📹 Tạo field address:
+Để thiết lập kiểu Embedded Document ta làm như sau:
+
+1. Field type: chọn Embedded document
+2. Entity Referenced: kiểu đổi tượng được lưu trữ ở đây tôi chọn đối tượng là Address
+
+📹 Demo video:
 
 ![Demo embedded document](assets/demoEmbeddedDocument.gif)
 
 ---
 
-## **7.5 Array Embedded Documents – Lịch sử công việc**
+## **Array Embedded Documents**
 
-📹 Ví dụ đề xuất:
+Dùng để lưu một mảng các object, giải sử ứng với mỗi thành viên team, ta muốn lưu một tập dữ liệu về quá trình làm việc của thành viên đó. Ta sẽ tạo thuộc tính mới tên workHistory.
 
-![Embedded array example](assets/embedded_array_example.gif)
+Để thiết lập kiểu Embedded Document ta làm như sau:
+
+1. Field type: chọn Array Embedded document
+2. Entity Referenced: kiểu đổi tượng được lưu trữ ở đây tôi chọn đối tượng là workHistory
+   📹 Demo (to be updated):
+
+<!-- ![Embedded array example](assets/demoArrayEmbeddedDocument.gif) -->
 
 ---
 
-# **8. Business Rules – Custom Validation & Computation**
+# **Business Rules – Custom Validation & Computation**
 
 Hệ thống cho phép khai báo hàm để kiểm tra và tính toán tự động khi dữ liệu thay đổi.
 
@@ -190,17 +216,46 @@ Hệ thống cho phép khai báo hàm để kiểm tra và tính toán tự đ�
 - Kiểm tra email hợp lệ
 - Tạo mã teamMember dựa trên name + birthDay
 
-📹 Custom validation:
+## **Custom validation**
 
-![Custom validation](assets/customValidation.png)
+Custom validation là các hàm sẽ được thực thi khi dữ liệu của đối tượng thay đổi.
+Hàm phải luôn trả các giá trị:
 
-📹 Custom computation:
+- True - dữ liệu hợp lệ
+- False - dữ liệu không hợp lệ
 
-![Custom computation](assets/customComputation.png)
+Ví dụ khi ta muốn kiểm tra email có hợp lệ hay không ta sẽ viết một hàm để kiểm tra xem chuỗi email chứa kí tự @ hay không.
+
+Để sử dụng validation:
+
+1. Chọn Use Computation
+2. Khai báo hàm sẽ thực thi cho computation.
+3. "Validation Message On Failure" nhập thông báo khi dữ liệu không hợp lệ.
+
+📹 Demo:
+![Demo Custom validation](assets/demoCustomValidation.gif)
+
+## **Custom Computation**
+
+Custom computation là các hàm sẽ được thực thi khi giá trị của các thuộc tính phụ thuộc (dependencies).
+Custom computation chỉ có thể được sử dụng khi thuộc tính (field) là có kiểu dữ liệu (field type) là computation.
+Giá trị trả về của hàm computation sẽ là giá trị của thuộc tính đó.
+
+Ví dụ, ta sẽ tạo thêm một thuộc tính mới tên là code (mã thành viên), thuộc tính này sẽ có giá trị tự sinh ra từ việc kết nối chuỗi dữ liệu birthDay và name.
+
+Để sử dụng computation ta làm như sau:
+
+1. Field type: chọn kiểu computation
+2. Chọn tab computation và viết hàm computation
+3. Dependencies: chọn các thuộc tính sẽ làm hàm computation chạy khi giá trị thay đổi, ở đây tôi chọn name và birthDay
+
+📹 Demo:
+
+![Demo Custom computation](assets/demoComputation.gif)
 
 ---
 
-# **9. Workflow – Tự động hoá công việc**
+# **Workflow – Tự động hoá công việc**
 
 Phần mềm quản lý hiện đại không chỉ CRUD.
 Điều quan trọng hơn là **tự động hoá quy trình vận hành**.
@@ -215,7 +270,7 @@ Phần mềm quản lý hiện đại không chỉ CRUD.
 
 ---
 
-## **9.1 Ví dụ thực tế về quy trình**
+## **Ví dụ thực tế về quy trình**
 
 ### **Doanh nghiệp bán hàng**
 
@@ -241,11 +296,11 @@ Phần mềm quản lý hiện đại không chỉ CRUD.
 
 ---
 
-# **10. Bộ node N8N dành cho GPortal**
+# **Bộ node N8N dành cho GPortal**
 
 Chúng tôi cung cấp đầy đủ node N8N để tương tác với dữ liệu GPortal.
 
-## **10.1 Bộ API Node**
+## **Bộ API Node**
 
 Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 
@@ -255,7 +310,7 @@ Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 
 ---
 
-## **10.2 Bộ điều khiển UI Node**
+## **Bộ điều khiển UI Node**
 
 Nhận tín hiệu điều khiển UI từ workflow.
 
@@ -265,7 +320,7 @@ Nhận tín hiệu điều khiển UI từ workflow.
 
 ---
 
-## **10.3 Query Embedding Vector Node**
+## **Query Embedding Vector Node**
 
 Truy vấn vector embedding phục vụ AI chatbot và semantic search.
 
