@@ -54,9 +54,7 @@ Bạn chỉ cần mở trang **Config Entity** và khai báo các field.
 
 📹 _Video tạo teamMember:_
 
-<video controls style="width: 100%;">
-  <source src="assets/createTeamMemberEntity.mov" type="video/quicktime">
-</video>
+![Create teamMember entity](assets/createTeamMemberEntity.gif)
 
 ---
 
@@ -69,9 +67,7 @@ Sau khi cấu hình, bạn có thể:
 
 📹 _Video nhập liệu:_
 
-<video controls style="width: 100%;">
-  <source src="assets/inputValueForEntity.mov" type="video/quicktime">
-</video>
+![Input value for entity](assets/inputValueForEntity.gif)
 
 ---
 
@@ -141,9 +137,7 @@ Giả sử ta muốn tạo thêm một thuộc tính tên role (vai trò) để 
 
 📹 Tạo - nhập liệu, tìm kiếm với kiểu enum:
 
-<video controls style="width: 100%;">
-  <source src="assets/demoEnumField.mov" type="video/quicktime">
-</video>
+![Demo enum field](assets/demoEnumField.gif)
 
 ---
 
@@ -154,9 +148,7 @@ Giả sử chúng ta cần thêm một thuộc tính nữa là team, thuộc tí
 
 📹 Demo
 
-<video controls style="width: 100%;">
-  <source src="assets/demoReference.mov" type="video/quicktime">
-</video>
+![Demo reference](assets/demoReference.gif)
 
 ---
 
@@ -167,9 +159,7 @@ Giả sử chúng ta tạo thêm một thuộc tính tên projects (dự án), t
 
 📹 Ví dụ đề xuất:
 
-<video controls style="width: 100%;">
-  <source src="assets/demoArrayReference.mov" type="video/quicktime">
-</video>
+![Demo array reference](assets/demoArrayReference.gif)
 
 ---
 
@@ -179,9 +169,7 @@ Dùng để lưu kiểu dữ liệu object, giả sử chúng ta muốn tạo th
 
 📹 Tạo field address:
 
-<video controls style="width: 100%;">
-  <source src="assets/demoEmbeddedDocument.mov" type="video/quicktime">
-</video>
+![Demo embedded document](assets/demoEmbeddedDocument.gif)
 
 ---
 
@@ -189,9 +177,7 @@ Dùng để lưu kiểu dữ liệu object, giả sử chúng ta muốn tạo th
 
 📹 Ví dụ đề xuất:
 
-<video controls style="width: 100%;">
-  <source src="assets/embedded_array_example.mov" type="video/quicktime">
-</video>
+![Embedded array example](assets/embedded_array_example.gif)
 
 ---
 
