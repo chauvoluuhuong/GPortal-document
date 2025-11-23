@@ -133,11 +133,12 @@ Mỗi thuộc tính đều có thể tuỳ chỉnh kiểu dữ liệu, đảm b�
 
 ## **Kiểu dữ liệu cơ bản**
 
-| Kiểu   | Mô tả             | Ví dụ                        |
-| ------ | ----------------- | ---------------------------- |
-| string | Chuỗi ký tự       | `"Nguyễn Văn A"`, `"Active"` |
-| number | Số                | `25`, `1200000`              |
-| date   | Ngày/giờ ISO 8601 | `"2025-11-23T10:30:00Z"`     |
+| Kiểu     | Mô tả                 | Ví dụ                                             |
+| -------- | --------------------- | ------------------------------------------------- |
+| string   | Chuỗi ký tự           | `"Nguyễn Văn A"`, `"Active"`                      |
+| number   | Số                    | `25`, `1200000`                                   |
+| date     | Ngày/giờ ISO 8601     | `"2025-11-23T10:30:00Z"`                          |
+| richText | chuỗi ký tự dài, html | dùng cho các đoạn văn bản dài, markdown hoặc html |
 
 📹 Field types supported:
 
@@ -403,7 +404,7 @@ Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 
 Được sử dụng để tạo đối tượng quảng lý (entity), có thể sử dụng như tool Agent.
 
-## 📄 **Bảng dữ liệu mô tả đối số**
+📄 **Bảng dữ liệu mô tả đối số**
 
 | Đối số         | Kiểu dữ liệu | Mô tả                                                                                                           | Hỗ trợ expression | Ví dụ                                                                                             |                      |
 | -------------- | ------------ | --------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------- | -------------------- |
@@ -412,7 +413,7 @@ Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 
 ---
 
-## 📘 **Request payload tương ứng**
+📘 **Request payload tương ứng**
 
 ```json
 {
@@ -435,7 +436,7 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** đúng như b�
 
 ---
 
-## 📄 **Bảng mô tả đối số**
+📄 **Bảng mô tả đối số**
 
 | Đối số         | Kiểu dữ liệu             | Mô tả                                                                                            | Hỗ trợ expression |
 | -------------- | ------------------------ | ------------------------------------------------------------------------------------------------ | ----------------- |
@@ -444,7 +445,7 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** đúng như b�
 
 ---
 
-### 📘 **Request payload tương ứng**
+📘 **Request payload tương ứng**
 
 ```json
 {
@@ -467,7 +468,7 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** cho đối số
 
 ---
 
-## 📄 **Bảng mô tả đối số**
+📄 **Bảng mô tả đối số**
 
 | Đối số        | Kiểu dữ liệu             | Mô tả                                                                                     | Hỗ trợ expression |
 | ------------- | ------------------------ | ----------------------------------------------------------------------------------------- | ----------------- |
@@ -475,7 +476,7 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** cho đối số
 
 ---
 
-### 📘 **Request payload tương ứng**
+📘 **Request payload tương ứng**
 
 ```json
 {
@@ -494,7 +495,7 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ**, theo đúng y�
 
 ---
 
-## 📄 **Bảng mô tả đối số Search API**
+📄 **Bảng mô tả đối số Search API**
 
 | Đối số               | Kiểu dữ liệu | Mô tả                                                                           | Hỗ trợ expression |
 | -------------------- | ------------ | ------------------------------------------------------------------------------- | ----------------- |
@@ -504,7 +505,7 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ**, theo đúng y�
 
 ---
 
-## 📘 **Request Payload tương ứng**
+📘 **Request Payload tương ứng**
 
 ```json
 {
@@ -522,18 +523,19 @@ demo
 
 ---
 
-## **Bộ điều khiển UI Node**
+**Bộ điều khiển UI Node**
 
 Nhận tín hiệu điều khiển UI từ workflow.
 
 ![Control UI Nodes](assets/controlUINodes.png)
 
-demmo
-https://www.youtube.com/watch?v=dh0_yUKtaxc&list=PLnIW6dBaVHcANhNr3dCQkghdEIBSi8aNK&index=5
+Demo:
+
+[![Control UI Nodes Video](https://img.youtube.com/vi/dh0_yUKtaxc/maxresdefault.jpg)](https://www.youtube.com/watch?v=dh0_yUKtaxc&list=PLnIW6dBaVHcANhNr3dCQkghdEIBSi8aNK&index=5)
 
 ---
 
-## **Query Embedding Vector Node**
+**Query Embedding Vector Node**
 
 Truy vấn vector embedding phục vụ AI chatbot và semantic search.
 
