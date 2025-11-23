@@ -4,16 +4,16 @@
 
 Không có nền tảng nào có thể giúp giải mọi bài toán, nhưng chúng ta có thể **loại bỏ các bước lặp đi lặp lại, đưa người dùng vào trung tâm phát triển**, giúp việc xây dựng phần mềm quản lý chỉ còn **vài ngày**, thậm chí **vài giờ**.
 
-**GPortal** được sinh ra với mục tiêu giúp doanh nghiệp xây dựng phần mềm quản lý **nhanh chóng – gọn nhẹ – dễ tích hợp AI**-**và hầu như không cần viết code.**
+**GPortal** được sinh ra với mục tiêu giúp doanh nghiệp xây dựng phần mềm quản lý **nhanh chóng – gọn nhẹ – dễ tích hợp AI – và hầu như không cần viết code.**
 
 GPortal cũng **tích hợp toàn diện với nền tảng tự động hoá N8N**, giúp việc xây dựng workflow trở nên đơn giản và mạnh mẽ.
 
-### **Như vạy, chúng tôi xác định giá trị mang lại:**
+### **Như vậy, chúng tôi xác định giá trị mang lại:**
 
 - Xoá bỏ chi phí xây dựng MVP / Prototype.
-- Xây dựng - thay đổi nhanh chóng.
+- Xây dựng – thay đổi nhanh chóng.
 - Gọn nhẹ, dễ dàng mở rộng, tích hợp AI.
-- Giảm thiệu sử phụ thuộc vào đội ngũ phát triển.
+- Giảm thiểu sự phụ thuộc vào đội ngũ phát triển.
 
 ---
 
@@ -51,14 +51,15 @@ Chúng tôi không tạo ra bất kỳ kiến trúc hay design pattern mới.
 | **Computation (Tính toán tự động)** | Hàm tự động sinh ra giá trị dựa trên các thuộc tính khác. Ví dụ: tạo mã nhân viên từ name + birthDay.           |
 | **Workflow (Luồng tự động hoá)**    | Các hành động tự động xảy ra khi có sự kiện. Ví dụ: kiểm tra tồn kho, gửi email, tạo công việc tiếp theo.       |
 | **Required (Bắt buộc nhập)**        | Thuộc tính không được phép bỏ trống khi nhập dữ liệu.                                                           |
-| **Function (Hàm)**                  | Đoạn mã JavaScript được sử dụng trong Validation hoặc Computation để xử lý logic tùy chỉnh.                     |
+| **Function (Hàm)**                  | Đoạn mã JavaScript được sử dụng trong Validation hoặc Computation để xử lý logic tuỳ chỉnh.                     |
 
 ---
 
-# **Entity Configuration – Tạo, đối tượng quản lý không cần sửa database hay API**
+# **Entity Configuration – Tạo đối tượng quản lý không cần sửa database hay API**
 
 Entity Configuration là nơi dùng để tuỳ chỉnh các đối tượng, bao gồm:
 
+- Thêm / xoá đối tượng quản lý
 - Các thuộc tính (field)
 - Các logic đi kèm cho các thuộc tính này (computation & validation)
 - Đối tượng có được lưu dưới dạng vector embedding để tìm kiếm bằng AI hay không
@@ -138,7 +139,7 @@ Mỗi thuộc tính đều có thể tuỳ chỉnh kiểu dữ liệu, đảm b�
 | string   | Chuỗi ký tự           | `"Nguyễn Văn A"`, `"Active"`                      |
 | number   | Số                    | `25`, `1200000`                                   |
 | date     | Ngày/giờ ISO 8601     | `"2025-11-23T10:30:00Z"`                          |
-| richText | chuỗi ký tự dài, html | dùng cho các đoạn văn bản dài, markdown hoặc html |
+| richText | Chuỗi ký tự dài, HTML | dùng cho các đoạn văn bản dài, markdown hoặc HTML |
 
 📹 Field types supported:
 
@@ -222,7 +223,7 @@ Ví dụ: thuộc tính **address** gồm street và city.
 
 Cách thiết lập:
 
-1. Field type: Embedded document
+1. Field type: Embedded Document
 2. Entity referenced: Address
 
 📹 Demo:
@@ -239,10 +240,12 @@ Ví dụ: thuộc tính **workHistory** để lưu quá trình làm việc.
 
 Cách thiết lập:
 
-1. Field type: Array Embedded document
+1. Field type: Array Embedded Document
 2. Entity referenced: workHistory
 
-📹 Demo (updating):
+📹 Demo:
+
+_(updating)_
 
 ---
 
@@ -281,13 +284,13 @@ Cách dùng:
 
 ## **Custom Computation**
 
-Computation chạy khi giá trị thuộc tính phụ thuộc (dependencies) thay đổi.
+Computation chạy khi giá trị của các thuộc tính phụ thuộc (dependencies) thay đổi.
 
 Ví dụ: tạo thuộc tính **code** = name + birthDay.
 
 Cách dùng:
 
-1. Field type: computation
+1. Field type: Computation
 2. Viết hàm computation
 3. Chọn dependencies: name và birthDay
 
@@ -297,11 +300,7 @@ Cách dùng:
 
 ---
 
-Dưới đây là bản **đã bổ sung, làm rõ và sửa lại cho đúng cấu trúc**, đồng thời thêm ví dụ đầy đủ:
-
----
-
-# 📦 Cách chúng tôi lưu trữ **entity**
+# 📦 **Cách chúng tôi lưu trữ entity**
 
 Mỗi entity khi lưu trữ sẽ được bao bọc trong một cấu trúc chuẩn, gồm:
 
@@ -315,19 +314,17 @@ Mỗi entity khi lưu trữ sẽ được bao bọc trong một cấu trúc chu�
 
 ### 🔍 Giải thích nhanh
 
-- **name**: Tên loại entity, không phải tên người hay dữ liệu.
-  Ví dụ: `"teamMember"`, `"customer"`, `"project"`.
+- **name**: Tên loại entity.
 - **version**: Dùng để quản lý thay đổi schema theo thời gian.
-  Khi schema cập nhật, version tăng lên.
-- **value**: Là object chứa **dữ liệu thực tế** của entity.
+- **value**: Object chứa **dữ liệu thực tế**.
 
 ---
 
-# 📘 Ví dụ
+### 📘 Ví dụ
 
 Giả sử entity **teamMember** có dữ liệu:
 
-```txt
+```
 name: "Nguyen Van A"
 email: "nguyenVanA@gmail.com"
 role: "leader"
@@ -400,18 +397,18 @@ Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 
 ![N8N API Nodes](assets/n8nAPINodes.jpg)
 
-### Create an new entity Node:
+---
 
-Được sử dụng để tạo đối tượng quảng lý (entity), có thể sử dụng như tool Agent.
+### **Create a new entity Node**
+
+Được sử dụng để tạo đối tượng quản lý (entity), có thể sử dụng như tool Agent.
 
 📄 **Bảng dữ liệu mô tả đối số**
 
-| Đối số         | Kiểu dữ liệu | Mô tả                                                                                                           | Hỗ trợ expression | Ví dụ                                                                                             |                      |
-| -------------- | ------------ | --------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------- | -------------------- |
-| **entityName** | `string`     | Tên đối tượng (entity) dùng để xác định loại dữ liệu cần truy vấn. Cho phép sử dụng biểu thức để lọc linh hoạt. | ✔️                | `"Product*"`, `"FAQ                                                                               | Guide"`, `"/^User/"` |
-| **entityData** | `object`     | Dữ liệu đối tượng được tạo hoặc dữ liệu dùng để lọc. Chấp nhận các biểu thức để so khớp theo thuộc tính.        | ✔️                | `{ "status": { "$eq": "active" } }`, `{ "category": "support" }`, `{ "price": { "$gte": 1000 } }` |                      |
-
----
+| Đối số         | Kiểu dữ liệu | Mô tả                                                                                                           | Hỗ trợ expression | Ví dụ                                                                                             |
+| -------------- | ------------ | --------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
+| **entityName** | `string`     | Tên đối tượng (entity) dùng để xác định loại dữ liệu cần truy vấn. Cho phép sử dụng biểu thức để lọc linh hoạt. | ✔️                | `"Product*"`, `"FAQ Guide"`, `"/^User/"`                                                          |
+| **entityData** | `object`     | Dữ liệu đối tượng được tạo hoặc dữ liệu dùng để lọc. Chấp nhận các biểu thức để so khớp theo thuộc tính.        | ✔️                | `{ "status": { "$eq": "active" } }`, `{ "category": "support" }`, `{ "price": { "$gte": 1000 } }` |
 
 📘 **Request payload tương ứng**
 
@@ -428,13 +425,11 @@ Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 demo:
 ![N8N Create Node](assets/demoCreateNode.gif)
 
-### Update an entity
-
-Được sử dụng để chỉnh sửa đối tượng quảng lý (entity), có thể sử dụng như tool Agent.
-
-Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** đúng như bạn yêu cầu:
-
 ---
+
+### **Update an entity**
+
+Được sử dụng để chỉnh sửa đối tượng quản lý (entity), có thể sử dụng như tool Agent.
 
 📄 **Bảng mô tả đối số**
 
@@ -442,8 +437,6 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** đúng như b�
 | -------------- | ------------------------ | ------------------------------------------------------------------------------------------------ | ----------------- |
 | **entityId**   | string / number / object | ID của đối tượng cần cập nhật. Có thể dùng expression để chọn nhiều ID hoặc chọn theo điều kiện. | ✔️                |
 | **entityData** | object                   | Dữ liệu cần update vào đối tượng.                                                                | ❌                |
-
----
 
 📘 **Request payload tương ứng**
 
@@ -460,21 +453,17 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** đúng như b�
 demo
 ![N8N Update Node](assets/demoUpdateNode.gif)
 
-### Delete an entity
-
-Được sử dụng để xoá đối tượng quảng lý (entity), có thể sử dụng như tool Agent.
-
-Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** cho đối số xoá:
-
 ---
+
+### **Delete an entity**
+
+Được sử dụng để xoá đối tượng quản lý (entity), có thể sử dụng như tool Agent.
 
 📄 **Bảng mô tả đối số**
 
-| Đối số        | Kiểu dữ liệu             | Mô tả                                                                                     | Hỗ trợ expression |
-| ------------- | ------------------------ | ----------------------------------------------------------------------------------------- | ----------------- |
-| **Entity Id** | string / number / object | ID của đối tượng cần xoá. Có thể dùng expression để xoá nhiều ID hoặc xoá theo điều kiện. | ✔️                |
-
----
+| Đối số       | Kiểu dữ liệu             | Mô tả                                                                                     | Hỗ trợ expression |
+| ------------ | ------------------------ | ----------------------------------------------------------------------------------------- | ----------------- |
+| **entityId** | string / number / object | ID của đối tượng cần xoá. Có thể dùng expression để xoá nhiều ID hoặc xoá theo điều kiện. | ✔️                |
 
 📘 **Request payload tương ứng**
 
@@ -487,13 +476,11 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ** cho đối số
 demo
 ![N8N Delete Node](assets/demoDeleteNode.gif)
 
-### Get many entities
-
-Được sử dụng tìm kiếm thông tin nhiều đối tượng quản lý, có thể sử dụng như API tool
-
-Dưới đây là **bản mô tả ngắn gọn** + **ví dụ**, theo đúng yêu cầu:
-
 ---
+
+### **Get many entities**
+
+Được sử dụng để tìm kiếm thông tin nhiều đối tượng quản lý, có thể sử dụng như API tool.
 
 📄 **Bảng mô tả đối số Search API**
 
@@ -502,8 +489,6 @@ Dưới đây là **bản mô tả ngắn gọn** + **ví dụ**, theo đúng y�
 | **searchParameters** | object       | Điều kiện tìm kiếm theo dạng MongoDB query object (so sánh, regex, in, range…). | ✔️                |
 | **limit**            | number       | Số lượng dữ liệu cần trả về.                                                    | ❌                |
 | **entityName**       | string       | Tên đối tượng (entity) cần tìm kiếm.                                            | ✔️                |
-
----
 
 📘 **Request Payload tương ứng**
 
@@ -523,7 +508,7 @@ demo
 
 ---
 
-**Bộ điều khiển UI Node**
+# **Bộ điều khiển UI Nodes**
 
 Nhận tín hiệu điều khiển UI từ workflow.
 
@@ -535,18 +520,18 @@ Demo:
 
 ---
 
-**Query Embedding Vector Node**
+# **Query Embedding Vector Node**
 
 Truy vấn vector embedding phục vụ AI chatbot và semantic search.
 
-Mỗi đối tượng, khi được tạo với lựa chọn sử dụng vector embedding sẽ được lưu cùng với vector embedding và hộ trợ việc senmatic search (tìm kiếm theo ngữ nghĩa).
+Mỗi đối tượng, khi được tạo với lựa chọn sử dụng vector embedding, sẽ được lưu cùng với vector embedding và hỗ trợ việc **semantic search** (tìm kiếm theo ngữ nghĩa).
 
-| Tham số           | Kiểu dữ liệu | Bắt buộc | Mô tả chức năng                                                                                                                      |
-| ----------------- | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **queryString**   | `string`     | ✔️       | Chuỗi văn bản cần chuyển thành vector embedding để thực hiện tìm kiếm theo ngữ nghĩa. Đây là câu hỏi / nội dung bạn muốn tìm.        |
-| **limit**         | `number`     | ✔️       | Số lượng kết quả tối đa cần trả về sau khi xếp hạng độ tương đồng vector.                                                            |
-| **numCandidates** | `number`     | ❌       | Số lượng ứng viên ban đầu để hệ thống mở rộng phạm vi tìm kiếm (dùng cho ANN search). Giúp tăng độ chính xác khi lọc ra top _limit_. |
-| **entityName**    | `string`     | ❌       | Tên loại đối tượng (entity) để lọc trong kho dữ liệu. Giúp chỉ tìm kiếm trong đúng bảng hoặc loại dữ liệu mong muốn.                 |
+| Tham số           | Kiểu dữ liệu | Bắt buộc | Mô tả chức năng                                                                       |
+| ----------------- | ------------ | -------- | ------------------------------------------------------------------------------------- |
+| **queryString**   | `string`     | ✔️       | Chuỗi văn bản cần chuyển thành vector embedding để thực hiện tìm kiếm theo ngữ nghĩa. |
+| **limit**         | `number`     | ✔️       | Số lượng kết quả tối đa cần trả về sau khi xếp hạng độ tương đồng vector.             |
+| **numCandidates** | `number`     | ❌       | Số lượng ứng viên ban đầu để hệ thống mở rộng phạm vi tìm kiếm (dùng cho ANN search). |
+| **entityName**    | `string`     | ❌       | Tên loại đối tượng (entity) để lọc trong kho dữ liệu.                                 |
 
 ![Query Vector Embedding](assets/queryVectorEmbedding.png)
 
