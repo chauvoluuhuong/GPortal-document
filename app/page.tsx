@@ -1,23 +1,9 @@
-// Helper component for images with unknown dimensions
-interface ImgProps {
-  src: string
-  alt: string
-}
+import React from 'react'
 
-function Img({ src, alt }: ImgProps) {
+// Helper component for images with unknown dimensions
+function Img({ src, alt, ...props }: { src: string; alt: string; [key: string]: any }) {
   return (
-    <img 
-      src={src} 
-      alt={alt} 
-      style={{ 
-        maxWidth: '100%', 
-        height: 'auto', 
-        display: 'block', 
-        margin: '1.5rem auto', 
-        borderRadius: '8px', 
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' 
-      }} 
-    />
+    <img src={src} alt={alt} {...props} style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '1.5rem auto', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }} />
   )
 }
 
@@ -310,7 +296,7 @@ export default function Home() {
           <tr>
             <td><strong>array embedded documents</strong></td>
             <td>Danh sách object</td>
-            <td><code>&quot;items&quot;: [ {'{'}&quot;name&quot;: &quot;SP A&quot;, &quot;qty&quot;: 2{'}'}, {'{'}&quot;name&quot;: &quot;SP B&quot;, &quot;qty&quot;: 1{'}'} ]</code></td>
+            <td><code>&quot;items&quot;: [ {'{'} &quot;name&quot;: &quot;SP A&quot;, &quot;qty&quot;: 2 {'}'}, {'{'} &quot;name&quot;: &quot;SP B&quot;, &quot;qty&quot;: 1 {'}'} ]</code></td>
           </tr>
         </tbody>
       </table>
@@ -604,7 +590,7 @@ role: "leader"`}</code></pre>
             <td><code>object</code></td>
             <td>Dữ liệu đối tượng được tạo hoặc dữ liệu dùng để lọc. Chấp nhận các biểu thức để so khớp theo thuộc tính.</td>
             <td>✔️</td>
-            <td><code>{'{'} &quot;status&quot;: {'{'}&quot;$eq&quot;: &quot;active&quot;{'}'} {'}'}</code>, <code>{'{'} &quot;category&quot;: &quot;support&quot; {'}'}</code>, <code>{'{'} &quot;price&quot;: {'{'}&quot;$gte&quot;: 1000{'}'} {'}'}</code></td>
+            <td><code>{'{'} &quot;status&quot;: {'{'} &quot;$eq&quot;: &quot;active&quot; {'}'} {'}'}</code>, <code>{'{'} &quot;category&quot;: &quot;support&quot; {'}'}</code>, <code>{'{'} &quot;price&quot;: {'{'} &quot;$gte&quot;: 1000 {'}'} {'}'}</code></td>
           </tr>
         </tbody>
       </table>
