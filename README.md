@@ -161,9 +161,9 @@ Tương tự lập trình, GPortal hỗ trợ các kiểu dữ liệu sau:
 
 ---
 
-# **Ví dụ kiểu dữ liệu nâng cao**
+### **Ví dụ kiểu dữ liệu nâng cao**
 
-## **Enum**
+#### **Enum**
 
 Dùng để chứa một tập hằng số.
 Enum gồm: key – name – color.
@@ -182,7 +182,7 @@ Cách thiết lập:
 
 ---
 
-## **Reference**
+#### **Reference**
 
 Dùng để chứa key trỏ đến một entity khác.
 
@@ -199,7 +199,7 @@ Cách thiết lập:
 
 ---
 
-## **Array Reference**
+#### **Array Reference**
 
 Dùng để chứa một tập key, trỏ đến nhiều entity khác.
 
@@ -216,7 +216,7 @@ Cách thiết lập:
 
 ---
 
-## **Embedded Document**
+#### **Embedded Document**
 
 Dùng để lưu object.
 Ví dụ: thuộc tính **address** gồm street và city.
@@ -232,7 +232,7 @@ Cách thiết lập:
 
 ---
 
-## **Array Embedded Documents**
+#### **Array Embedded Documents**
 
 Dùng để lưu danh sách object.
 
@@ -253,7 +253,7 @@ _(updating)_
 
 Hệ thống cho phép khai báo hàm kiểm tra và tính toán tự động khi dữ liệu thay đổi.
 
-### **Ví dụ**
+**Ví dụ**
 
 - Kiểm tra email hợp lệ
 - Tạo mã teamMember dựa trên name + birthDay
@@ -387,11 +387,11 @@ Quan trọng hơn là **tự động hoá vận hành**.
 
 ---
 
-# **Bộ node N8N dành cho GPortal**
+## **Bộ node N8N dành cho GPortal**
 
 Chúng tôi cung cấp đầy đủ node N8N để tương tác với dữ liệu GPortal.
 
-## **Bộ API Node**
+### **Bộ API Node**
 
 Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 
@@ -399,7 +399,7 @@ Hỗ trợ đầy đủ CRUD, gọi API để thao tác entity.
 
 ---
 
-### **Create a new entity Node**
+#### **Create a new entity Node**
 
 Được sử dụng để tạo đối tượng quản lý (entity), có thể sử dụng như tool Agent.
 
@@ -427,7 +427,7 @@ demo:
 
 ---
 
-### **Update an entity**
+#### **Update an entity**
 
 Được sử dụng để chỉnh sửa đối tượng quản lý (entity), có thể sử dụng như tool Agent.
 
@@ -455,7 +455,7 @@ demo
 
 ---
 
-### **Delete an entity**
+#### **Delete an entity**
 
 Được sử dụng để xoá đối tượng quản lý (entity), có thể sử dụng như tool Agent.
 
@@ -478,7 +478,7 @@ demo
 
 ---
 
-### **Get many entities**
+#### **Get many entities**
 
 Được sử dụng để tìm kiếm thông tin nhiều đối tượng quản lý, có thể sử dụng như API tool.
 
@@ -508,7 +508,7 @@ demo
 
 ---
 
-# **Bộ điều khiển UI Nodes**
+## **Bộ điều khiển UI Nodes**
 
 Nhận tín hiệu điều khiển UI từ workflow.
 
@@ -520,7 +520,7 @@ Demo:
 
 ---
 
-# **Query Embedding Vector Node**
+#### **Query Embedding Vector Node**
 
 Truy vấn vector embedding phục vụ AI chatbot và semantic search.
 
