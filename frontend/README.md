@@ -35,6 +35,21 @@ Ví dụ:
 
 Vậy, nếu chúng ta **có giao diện đầy đủ để tuỳ chỉnh** (config) các **đối tượng quản lý (entity)**, **ta hoàn toàn có thể loại bỏ các bước lập trình, xây dựng database, API...**
 
+Tương ứng, chúng ta sẽ cần **4 bước để có phần mềm quản lý cho riêng bạn**
+
+1. Tạo đối tượng cần quản lý.
+2. Thiết lập các thuộc tính, logic cho đối tượng cần quản lý.
+3. Nhập liệu, thêm - xoá - sửa - tìm kiếm cho đối tượng cần quản lý.
+4. Sử dụng N8N, với các node dành riêng cho GPortal để xây dựng workflow và làm tự động quy trình quản lý
+
+📷 Các bước thực hiện trên GPortal:
+
+![Entity config overview](assets/stepBuild1.png)
+
+📷 Xây dựng workflow:
+
+![Entity config overview](assets/stepBuild2.png)
+
 ---
 
 # **Từ điển**

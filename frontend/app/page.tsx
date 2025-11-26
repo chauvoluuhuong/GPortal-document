@@ -172,6 +172,35 @@ export default function Home() {
         </strong>
       </p>
 
+      <p>
+        Tương ứng, chúng ta sẽ cần{" "}
+        <strong>4 bước để có phần mềm quản lý cho riêng bạn</strong>
+      </p>
+
+      <ol>
+        <li>Tạo đối tượng cần quản lý.</li>
+        <li>Thiết lập các thuộc tính, logic cho đối tượng cần quản lý.</li>
+        <li>
+          Nhập liệu, thêm - xoá - sửa - tìm kiếm cho đối tượng cần quản lý.
+        </li>
+        <li>
+          Sử dụng N8N, với các node dành riêng cho GPortal để xây dựng workflow
+          và làm tự động quy trình quản lý
+        </li>
+      </ol>
+
+      <p>
+        📷 <em>Các bước thực hiện trên GPortal:</em>
+      </p>
+
+      <Img src="/assets/stepBuild1.png" alt="Step build 1" />
+
+      <p>
+        📷 <em>Xây dựng workflow:</em>
+      </p>
+
+      <Img src="/assets/stepBuild2.png" alt="Step build 2" />
+
       <hr />
 
       <h1>

@@ -10,6 +10,18 @@ firebase-debug.*.log*
 # Firebase cache
 .firebase/
 
+**/.next
+**/out/**
+**/build/**
+
+# Firebase cache
+.firebase/
+
+# Firebase config
+.firebaserc
+
+# Firebase config
+
 # Firebase config
 
 # Uncomment this if you'd like others to create their own Firebase project.
