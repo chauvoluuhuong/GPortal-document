@@ -46,9 +46,21 @@ Tương ứng, chúng ta sẽ cần **4 bước để có phần mềm quản l�
 
 ![Entity config overview](assets/stepBuild1.png)
 
+📷 Nhập liệu, tìm kiếm đối tượng quản lý:
+
+![Entity config overview](assets/inputEntity.png)
+
 📷 Xây dựng workflow:
 
 ![Entity config overview](assets/stepBuild2.png)
+
+📷 **(Trường hợp nâng cao)** Tạo thêm trang quản lý\*\*:
+
+![Entity config overview](assets/customView.png)
+
+📷 **(Trường hợp nâng cao)** Tạo thêm trang quản lý Với AI:
+
+![Entity config overview](assets/generateViewWithAi.png)
 
 ---
 
